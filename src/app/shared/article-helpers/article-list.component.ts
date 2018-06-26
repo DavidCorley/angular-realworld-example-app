@@ -21,6 +21,8 @@ export class ArticleListComponent {
     }
   }
 
+  @Input() selectedUser: any;
+
   query: ArticleListConfig;
   results: Article[];
   loading = false;

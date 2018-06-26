@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'article',
     loadChildren: './article/article.module#ArticleModule'
+  },
+  {
+    path: 'compeat-page',
+    loadChildren: './compeat-page/compeat-page.module#CompeatPageModule'
   }
 ];
 

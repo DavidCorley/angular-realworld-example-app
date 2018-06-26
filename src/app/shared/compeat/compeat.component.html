@@ -1,0 +1,6 @@
+<div class="col-sm-12">
+  <ul class="list-unstyled user-list">
+    <li *ngFor="let user of users" [class.activeUser]="selectedUser != null && user.id == selectedUser.id" (click)="selectUser(user)">{{ user.name }}</li>
+  </ul>
+</div>
+

@@ -14,6 +14,8 @@ import {
   UserService
 } from './services';
 
+import { CompeatService } from './services/compeat.service';
+
 @NgModule({
   imports: [
     CommonModule
@@ -27,7 +29,8 @@ import {
     JwtService,
     ProfilesService,
     TagsService,
-    UserService
+    UserService,
+    CompeatService
   ],
   declarations: []
 })

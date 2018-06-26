@@ -1,0 +1,33 @@
+<h3>Compeat Page</h3>
+
+  <div class="col-sm-3" style="vertical-align: top; display: inline-block; border-right: solid 1px #cccccc;">
+    <compeat (userSelectedEvent)="userSelected($event)"></compeat>
+  </div>
+  <div class="col-sm-9" style="display: inline-block;">
+    <div *ngIf="selectedUser != null">
+      <ul class="posts-list">
+        <li *ngFor="let post of posts">
+          <div>
+            <div><strong><span class="text-green"><a (click)="showUserInfo()" class="post-username">{{ selectedUser.name }}</a></span> - {{ post.title }}</strong></div>
+            <div>{{ post.body }}</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<div id="userModal" *ngIf="showModal">
+  <div class="modal-header">User Information for {{ selectedUser.name}}</div>
+  <div class="modal-body">
+    <strong>Name:</strong> {{ selectedUser.name }}<br />
+    <strong>Username:</strong> {{ selectedUser.username }}<br />
+    <strong>Email:</strong> {{ selectedUser.email }}<br />
+    <br />
+    <h5>Company</h5>
+    <strong>Name:</strong> {{ selectedUser.company.name }}<br />
+    <strong>Catchphrase:</strong> {{ selectedUser.company.catchPhrase }}<br />
+    <strong>BS:</strong> {{ selectedUser.company.bs }}
+  </div>
+</div>
+
+<div id="overlay" (click)="closeModal()" *ngIf="showModal"></div>

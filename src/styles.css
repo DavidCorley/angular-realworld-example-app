@@ -1,1 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
+ul .list-unstyled {
+  list-style-type: none;
+}
+
+ul.list-unstyled li {
+  padding: 5px;
+}
+
+ul.list-unstyled li:not(last-child) {
+  border-bottom: solid 1px #cccccc;
+}
+
+  ul.list-unstyled li:hover {
+    background-color: #00aa00;
+    color: #FFFFFF;
+    transition: background-color linear .5s;
+    cursor: pointer;
+  }
+
+  .compeat-page {
+    padding: 10px;
+  }
+
+.left-col {
+  display: inline-block;
+  float: left;
+  width: 15%;
+  border-right: solid 1px #aaaaaa;
+}
+
+.right-col {
+  display: inline-block;
+  float: right;
+  width: 85%;
+  padding-left: 10px;
+}
+
+.activeUser {
+  color: #00aa00;
+  font-weight: bold;
+}
+
+.posts-list {
+  list-style-type: none;
+}
+
+  .posts-list > li {
+    border-bottom: solid 1px #cccccc;
+    padding: 5px 0;
+  }
+
+.text-green {
+  color: #00aa00;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+#userModal {
+  z-index: 100;
+  position: fixed;
+  top: 25%;
+  left: 38%;
+  background-color: #FFFFFF;
+  color: #00aa00;
+  min-width: 25%;
+  max-width: 50%;
+  width: auto;
+  min-height: 30%;
+  margin: auto;
+  border-radius: 5px 5px;
+  box-shadow: #444444 5px 5px 5px;
+  padding: 7px;
+}
+
+  #userModal strong {
+    color: #00aa00;
+  }
+
+.modal-header {
+  color: #005500;
+  font-size: 1.1em;
+  padding: 5px;
+}
+
+.modal-body {
+  color: #5a5a5a;
+}
+
+
+#overlay {
+  z-index: 10;
+  background-color: #666666;
+  opacity: .45;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.post-username {
+  cursor: pointer;
+}

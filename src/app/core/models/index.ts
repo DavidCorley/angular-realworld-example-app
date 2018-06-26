@@ -4,3 +4,6 @@ export * from './comment.model';
 export * from './errors.model';
 export * from './profile.model';
 export * from './user.model';
+export * from './company.model';
+export * from './post.model';
+export * from './post-user.model';

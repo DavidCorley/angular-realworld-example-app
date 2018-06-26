@@ -8,4 +8,5 @@ import { Article } from '../../core';
 })
 export class ArticleMetaComponent {
   @Input() article: Article;
+  @Input() selectedUser: any;
 }

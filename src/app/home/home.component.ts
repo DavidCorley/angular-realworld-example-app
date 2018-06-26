@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ArticleListConfig, TagsService, UserService } from '../core';
+import { PostUser } from '../core/models';
 
 @Component({
   selector: 'app-home-page',
@@ -9,6 +10,8 @@ import { ArticleListConfig, TagsService, UserService } from '../core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  selectedUser: PostUser;
+
   constructor(
     private router: Router,
     private tagsService: TagsService,
@@ -21,7 +24,12 @@ export class HomeComponent implements OnInit {
     filters: {}
   };
   tags: Array<string> = [];
-  tagsLoaded = false;
+  tagsLoaded = false; 
+
+  userSelected(selectedUser) {
+    this.selectedUser = selectedUser != this.selectedUser ? selectedUser : null;    
+    this.setListTo(this.listConfig.type, this.listConfig.filters);
+  }
 
   ngOnInit() {
     this.userService.isAuthenticated.subscribe(

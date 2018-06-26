@@ -9,8 +9,9 @@ import {
   HeaderComponent,
   SharedModule
 } from './shared';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module'; 
 import { CoreModule } from './core/core.module';
+import { CompeatPageModule } from './compeat-page/compeat-page.module';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, HeaderComponent],
@@ -20,7 +21,7 @@ import { CoreModule } from './core/core.module';
     SharedModule,
     HomeModule,
     AuthModule,
-    AppRoutingModule
+    AppRoutingModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
