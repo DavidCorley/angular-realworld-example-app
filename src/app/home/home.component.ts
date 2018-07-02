@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ArticleListConfig, TagsService, UserService } from '../core';
+import {CompeatComponent} from '../Compeat/compeat.component';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   constructor(
     private router: Router,
     private tagsService: TagsService,
     private userService: UserService
   ) {}
-
+  @ViewChild(CompeatComponent) child;
   isAuthenticated: boolean;
   listConfig: ArticleListConfig = {
     type: 'all',
@@ -22,8 +23,20 @@ export class HomeComponent implements OnInit {
   };
   tags: Array<string> = [];
   tagsLoaded = false;
+  userSelected = '';
+
+  receiveMessage($event) {
+    console.log($event);
+    this.userSelected = $event;
+  }
+  ngAfterViewInit() {
+    this.userSelected = this.child.userSelected;
+  }
+
 
   ngOnInit() {
+    this.userSelected = this.child.selectedUser;
+    console.log(this.child.selectedUser);
     this.userService.isAuthenticated.subscribe(
       (authenticated) => {
         this.isAuthenticated = authenticated;

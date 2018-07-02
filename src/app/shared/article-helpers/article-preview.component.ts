@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { Article } from '../../core';
 
@@ -8,7 +8,7 @@ import { Article } from '../../core';
 })
 export class ArticlePreviewComponent {
   @Input() article: Article;
-
+  @Input() selectedUser: string;
   onToggleFavorite(favorited: boolean) {
     this.article['favorited'] = favorited;
 

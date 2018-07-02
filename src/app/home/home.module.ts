@@ -5,11 +5,13 @@ import { HomeComponent } from './home.component';
 import { HomeAuthResolver } from './home-auth-resolver.service';
 import { SharedModule } from '../shared';
 import { HomeRoutingModule } from './home-routing.module';
-
+import {CompeatModule} from '../Compeat/compeat.module';
+import { CompeatComponent } from '../Compeat/compeat.component';
 @NgModule({
   imports: [
     SharedModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    CompeatModule
   ],
   declarations: [
     HomeComponent

@@ -1,5 +1,5 @@
 <div class="article-preview">
-  <app-article-meta [article]="article">
+  <app-article-meta [selectedUser]="selectedUser" [article]="article" >
     <app-favorite-button
       [article]="article"
       (toggle)="onToggleFavorite($event)"
